@@ -4,7 +4,7 @@ import "./navbar.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faHouse,faUser,faCheck} from '@fortawesome/free-solid-svg-icons'
 
-export default function Navbar(){
+export default function Navbar(props){
     return(
         <div className="navbar" id="navbar">
                 <div>
@@ -12,7 +12,7 @@ export default function Navbar(){
                 </div>
                 <ul className="navlinks">
                     <li className="links"><FontAwesomeIcon icon={faHouse}/> Home</li>
-                    <li  id="loginBTN"><FontAwesomeIcon icon={faUser} /> LOG OUT</li>
+                    <li  id="loginBTN" onClick={() => props.logout()}><FontAwesomeIcon icon={faUser}  /> LOG OUT</li>
                     <li  id="loginBTN"><FontAwesomeIcon icon={faCheck} /> create account</li>
                 </ul>
         </div>
