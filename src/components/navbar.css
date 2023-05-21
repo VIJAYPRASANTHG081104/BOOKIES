@@ -1,0 +1,83 @@
+.logo{
+    position: relative;
+    top: 6px;
+    left: 100%;
+    width: 50px;
+    height: 50px;
+    font-family: 'Bebas Neue', sans-serif;
+    cursor: pointer;
+    background-color: pink;
+    padding: 5px;
+    border-radius: 20px;
+}
+.navbar{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 0, 208);   /*#f27*/
+    z-index: 1;
+    transition: 0.5s;
+}
+.navbar2{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 40, 123);
+    z-index: 1;
+    transition: 0.5s;
+
+}
+.navlinks{
+    position: relative;
+    right: 5%;
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    align-self: center;
+}
+.navlinks .links{
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.navlinks .links:hover{
+    color: #fff;
+
+}
+.navlinks #loginBTN{
+    border: solid 2px black;
+    cursor: pointer;
+    position: relative;
+    background-color: transparent;
+    padding: 10px;
+    transition: 0.5s;
+}
+.navlinks #loginBTN:hover{
+    background-color: #fff;
+}
+.searchdiv{
+    border: solid 2px #000;
+    width: 200px;
+    height: 35px;
+    display: flex;
+}
+.searchdiv #search{
+    font-family: 'Bebas Neue', sans-serif;
+    display: flex;
+    width: 160px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+#searchbtn{
+    position: relative;
+    top: 8px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+::placeholder{
+    font-family: 'Bebas Neue', sans-serif;
+    color: #000;
+}

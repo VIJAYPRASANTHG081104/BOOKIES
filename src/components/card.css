@@ -1,0 +1,81 @@
+.maincontainer{
+    height: 500px;
+
+}.cardlist{
+    margin-left: 100px;
+    gap: 1rem;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+.container{
+    border: solid 2px #fff;
+    top: 100px;
+    height: 330px;
+    position: relative;
+    width: 230px;
+    background-color: #ff2277;
+    font-size: 12px;
+    display: flex;   
+    flex-direction: column; 
+    transition: 0.5s;
+}
+.container:hover{
+    transform: scale(1.05);
+}
+#img{
+    position: relative;
+
+}
+#para{
+    left: 9%;
+    display: flex;
+    position: relative;
+    top: 16px;
+}
+#title{
+    position: relative;
+    margin-left: 10px;
+}
+#des{
+    position: relative;
+    left: 9%;
+}
+.addDeleteBtn2{
+    width: 40%;
+    margin-left: 10px;
+    position: relative;
+    background-color: #ff2277;
+    border: solid 3px #fff;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px;
+    transition: 0.5s;
+}
+.addDeleteBtn2:hover{
+    background-color: #fff;
+    border-color: #000;
+    color: #000;
+}
+#download{
+    width: 40%;
+    height: 25px;
+    position: absolute;
+    left: 110px;
+    top: 289px;
+    background-color: #ff2277;
+    border: solid 3px #fff;
+    color: #fff;
+    transition: 0.5s;
+
+}
+#download:hover{
+    background-color: #fff;
+    border-color: #000;
+    color: #000;
+}

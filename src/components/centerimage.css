@@ -1,0 +1,81 @@
+.back{
+    top: 75px;
+    height: 800px;
+    position: relative;
+    overflow: hidden;
+    background-image: url("images/back.jpg");
+    /* background-attachment: fixed; */
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.back .backmain{
+    position: relative;
+    left:10%;
+    margin-top: 130px;
+    width: 35%;
+}
+.back .backmain .heading{
+    color: #fff;
+    font-size: 70px;
+}
+.back .backmain .para{
+    color: #fff;
+    font-family: 'Dosis', sans-serif;
+}
+.ebtn{
+
+    width: 150px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+}
+.ebtn #Ebtn{
+    width: 150px;
+    height: 55px;
+    background-color:  rgb(255, 0, 208);
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    outline: none;
+    border: solid 4px #fff;
+    transition: 0.5s;
+}
+.ebtn #Ebtn:hover{
+    transform: scale(1.05);
+    background-color: white;
+    color: #000;
+    border-color:  #000;
+
+}
+.cover{
+    height: 60px;
+    position: relative;
+    top: 37%;
+    background:linear-gradient(to top,#000,transparent);
+}
+.addDelete{
+    position: absolute;
+    width: 20%;
+    height: 55px;
+    right: 1%;
+    margin-top: 190px;
+}
+.addDelete .addDeleteBtn1{
+    position: relative;
+    width: 50%;
+    margin-left: 25px;
+    height: 55px;
+    background-color: #ff2277;
+    border: solid 4px #fff;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    transition: 0.5s;
+}
+.addDelete .addDeleteBtn1:hover{
+    transform: scale(1.05);
+}
