@@ -126,7 +126,7 @@ export default function RegisterPage(){
                      </div>
                      <div className="clearfix"></div>
                      <div className="form-group">
-                       Already have account ? Please <Link to="/login">login</Link>
+                       Already have account ? Please <Link to="/">login</Link>
                      </div>
           
           

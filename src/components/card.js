@@ -47,7 +47,7 @@ export default function Card(props) {
   // console.log(props);
   return (
     <div className="maincontainer">
-      <div className="container" id={props.id}>
+      <div className="container1" id={props.id}>
         <img src={props.img} alt="img" id="img" height={210} width={230} />
         <p id="para">
           <FontAwesomeIcon icon={faStar} />

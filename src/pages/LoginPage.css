@@ -6,6 +6,7 @@
 
 .container{
     color: #fff;
+    border: 2px solid #fff;
     background: #000 !important;
     width: 40%;
     height: 40%;
@@ -23,7 +24,7 @@
     content:" ";
     width:100px;
     height:5px;
-    background:#f27;
+    background:#0069c0;
     display:block;
     margin-top:20px;
     border-radius:3px;

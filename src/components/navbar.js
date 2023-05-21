@@ -13,7 +13,6 @@ export default function Navbar(props){
                 <ul className="navlinks">
                     <li className="links"><FontAwesomeIcon icon={faHouse}/> Home</li>
                     <li  id="loginBTN" onClick={() => props.logout()}><FontAwesomeIcon icon={faUser}  /> LOG OUT</li>
-                    <li  id="loginBTN"><FontAwesomeIcon icon={faCheck} /> create account</li>
                 </ul>
         </div>
     )

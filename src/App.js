@@ -10,7 +10,7 @@ function App() {
 const logOut = () => {
   logout();
   //navigate to login page
-  window.location.href = "/login";
+  window.location.href = "/";
 
 };
 
