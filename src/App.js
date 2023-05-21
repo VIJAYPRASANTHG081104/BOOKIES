@@ -1,4 +1,5 @@
 import Navbar from "./components/navbar"
+
 import Centerimage from "./components/centerimage"
 import Maincard from "./components/maincard";
 import './App.css'

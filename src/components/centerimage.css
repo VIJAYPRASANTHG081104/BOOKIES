@@ -1,3 +1,13 @@
+#cardsMain{
+    margin-left: 100px;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
 .back{
     top: 75px;
     height: 800px;
@@ -78,4 +88,23 @@
 }
 .addDelete .addDeleteBtn1:hover{
     transform: scale(1.05);
+}
+#subbtn{
+    font-family: 'Bebas Neue', sans-serif;
+    outline: none;
+    border: solid 2px #000;
+    background-color: transparent;
+    transition: 0.5s;
+    cursor: pointer;
+    position: absolute;
+    left: 250px;
+    top: 30%x;
+}
+#subbtn:hover{
+    background-color: #fff;
+    transform: scale(1.1);
+}
+#addfunction{
+    height: 150px;
+    padding: 20px;
 }

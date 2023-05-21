@@ -1,8 +1,7 @@
 const {google} = require('googleapis');
 //get pdf file from request
-
-
-
+const fileName = "cat2.jpg";
+const mimeTypes = "image/jpg";
 //PATH OF THE IMAGE
 const path = require('path');
 const fs = require('fs');
@@ -32,7 +31,7 @@ const drive = google.drive({
     auth: oauth2Client
 });
 
-const filePath = path.join(__dirname, 'demo.pdf');
+const filePath = path.join(__dirname, fileName);
 
 //uploading the file to the drive
 async function uploadFile(){
@@ -40,15 +39,16 @@ async function uploadFile(){
     try{
         const response = await drive.files.create({
             requestBody: {
-                name: 'demo.pdf', //This can be name of your choice , name of the file that is stored in the drive
-                mimeType: 'application/pdf'// mimeType of your file for image mimeType is 'image/jpeg'
+                name: fileName, //This can be name of your choice , name of the file that is stored in the drive
+                mimeType: mimeTypes// mimeType of your file for image mimeType is 'image/jpeg'
             },
             media: {
-                mimeType: 'application/pdf',
+                mimeType: mimeTypes,
                 body: fs.createReadStream(filePath)// read streams the file and uploads it to the drive
             }
         })
         console.log(response.data);
+        return response.data.id;
 
     }
     catch(error){
@@ -57,10 +57,10 @@ async function uploadFile(){
 }
 
 //delete the file from the drive
-async function deleteFile(){
+async function deleteFile(id){
     try{
         const response = await drive.files.delete({
-            fileId: '1N_0K-NDiyxafSAFllVWirjuEclMwWTfP'
+            fileId: id
         })
         console.log(response.data, response.status);
     }
@@ -71,9 +71,9 @@ async function deleteFile(){
 
 
 //generate public url for the file
-async function generatePublicUrl(){
+async function generatePublicUrl(id){
     try{
-       const fileId = '1W3yzsdPCNuxPso-h9g20sr1hNvFTm6fB';
+       const fileId = id;
          await drive.permissions.create({
             fileId: fileId,
             requestBody: {
@@ -92,4 +92,5 @@ async function generatePublicUrl(){
         console.log(error.message);
     }
 }
-generatePublicUrl();
+
+exports.module = uploadFile

@@ -16,34 +16,43 @@ export default function Maincard() {
     };
     const app = initializeApp(appSetting);
     const database = getDatabase(app);
-    const shoppingListInDb = ref(database, "books");
-
+    const shoppingListInDb = ref(database, "/");
     onValue(shoppingListInDb, (snapshot) => {
       if (snapshot.exists()) {
         const snap = Object.entries(snapshot.val());
-        const newData = snap.map((currentItem) => {
-          const dataValue = {};
-          const [currentItemId, currentItemValue] = currentItem;
-
-          dataValue.id = currentItemValue.id.toString();
-          dataValue.title = currentItemValue.title;
-          dataValue.description = currentItemValue.description;
-          dataValue.download_url = currentItemValue.download_url;
-          dataValue.rating = currentItemValue.rating;
-          dataValue.img =
-            "https://easydrawingguides.com/wp-content/uploads/2020/10/how-to-draw-an-open-book-featured-image-1200.png";
-
-          return dataValue;
+        const newData = snap.map(([currentItemId, currentItemValue]) => {
+          if (typeof currentItemValue === 'object' && currentItemValue !== null) {
+            const ans = Object.entries(currentItemValue).map(([key, value]) => {
+              const dataValue = {
+                id: value.id,
+                title: value.title,
+                description: value.description,
+                download_url: value.download_link,
+                view_link: value.view_link,
+                rating: value.rating,
+                img: "https://easydrawingguides.com/wp-content/uploads/2020/10/how-to-draw-an-open-book-featured-image-1200.png"
+              };
+              return dataValue;
+            });
+            return ans;
+          } else {
+            return []; // or handle the non-dictionary case as per your requirement
+          }
         });
-
-        setData(newData);
+    
+        setData(newData.flat());
       } else {
         console.log("No data");
       }
     });
+    
+    
+    
+    
   }, []);
 
   const cards = data.map((item) => (
+  
     <section key={item.id} className="cardlist">
       <Card
         id={item.id}
@@ -57,5 +66,5 @@ export default function Maincard() {
     </section>
   ));
 
-  return <div>{cards}</div>;
+  return <div id="cardsMain">{cards}</div>;
 }
